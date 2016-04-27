@@ -29,7 +29,7 @@ npm install gulp -g
     var babel = require('gulp-babel');
     var less = require('gulp-less');
 
-    //gulp都是任务是，我们建一个任务为jade用来转换jade的代码
+    //gulp都是task任务，我们建一个任务为jade用来转换jade的代码
     gulp.task('jade', function(){
         //用return gulp.src()来创建一个虚拟文件对象流，然后匹配不同的文件,设置base灵活改变生成文件路径
         return gulp.src(['src/*.jade', 'src/view/*.jade', 'src/view/**/*.jade']，{
@@ -64,6 +64,7 @@ npm install gulp -g
 
 	});
 ```
+
     ***匹配模式***
     >\*：匹配单个文件或目录
     >\*.\*：能匹配带后缀的文件
