@@ -65,21 +65,18 @@ npm install gulp -g
 	});
 ```
 ***匹配模式***
-
-\*：匹配单个文件或目录
-
-\*.\*：能匹配带后缀的文件
-
-\*/\*/\*.js：能匹配 a/b/c.js，但不能匹配a/b.js或a/b/c/d.js
-\*\*能匹配所有的目录和文件
-\*\*/\*.js 能匹配多级目录下的js文件（也包含当前目录下）
-?.js能匹配单字符名的JS文件，如a.js
-[xyz].js匹配x.js|y.js|z.js
-[^xyz].js表示取反，不能匹配x.js|y.js|z.js文件
+- \*：匹配单个文件或目录
+- \*.\*：能匹配带后缀的文件
+- \*/\*/\*.js：能匹配 a/b/c.js，但不能匹配a/b.js或a/b/c/d.js
+- \*\*能匹配所有的目录和文件
+- \*\*/\*.js 能匹配多级目录下的js文件（也包含当前目录下）
+- ?.js能匹配单字符名的JS文件，如a.js
+- [xyz].js匹配x.js|y.js|z.js
+- [^xyz].js表示取反，不能匹配x.js|y.js|z.js文件
 ***如果需要对代码进行压缩混淆，重命名，我们可以用到一些gulp插件***
-gulp-minify-css：压缩css代码
-gulp-uglify：压缩混淆js
-gulp-rename：重命名输出文件
+- gulp-minify-css：压缩css代码
+- gulp-uglify：压缩混淆js
+- gulp-rename：重命名输出文件
 - 我们可以转译代码了，这是我们需要给工程起一个server，然后监听文件的修改，即使编译刷新页面:
 ```shell
 npm install browser-sync --save-dev
