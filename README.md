@@ -2,7 +2,7 @@
 
 >gulp是一个优秀的自动化构建的工具，它的核心在于流式的操作和简单易学上手的API，下面我们就来学习搭建一个简单的工程框架。
 
-- 首先我们来简单建一下文件目录：
+首先我们来简单建一下文件目录：
 ```
 dist/
 src/
@@ -79,8 +79,7 @@ npm install gulp -g
 - gulp-uglify：压缩混淆js
 - gulp-rename：重命名输出文件
 
-
-- 我们可以转译代码了，这是我们需要给工程起一个server，然后监听文件的修改，即使编译刷新页面:
+我们可以转译代码了，这是我们需要给工程起一个server，然后监听文件的修改，即使编译刷新页面:
 ```shell
 npm install browser-sync --save-dev
 ```
@@ -98,7 +97,8 @@ gulp.task('serve', ['less', 'js', 'jade'], function () {
 });
 ```
 ***这时我们的工程初始模型就出来了，但是编译时如果出现错误，工程会挂掉，这是还要重启gulp serve，比较麻烦，处理方法是引入gulp-plumber***
-#####我们的gulpfile.js就是这样了
+
+我们的gulpfile.js就是这样了
 ```js
     var gulp        = require('gulp');
     var browserSync = require('browser-sync');
