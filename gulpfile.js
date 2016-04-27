@@ -8,9 +8,11 @@ var uglify      = require('gulp-uglify');
 var rename      = require('gulp-rename');
 
 gulp.task('jade', function () {
-    return gulp.src(['src/view/*.jade', 'src/view/**/*.jade'])
+    return gulp.src(['src/*.jade', 'src/view/*.jade', 'src/view/**/*.jade'], {
+        base: 'src'
+    })
         .pipe(jade())
-        .pipe(gulp.dest('dist/'))
+        .pipe(gulp.dest('dist'))
 });
 
 gulp.task('less', function () {
@@ -22,13 +24,15 @@ gulp.task('less', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(['src/js/*.js', 'src/js/**/*.js'])
+    return gulp.src(['src/js/*.js', 'src/js/**/*.js'],{
+            base: 'src'
+        })
         .pipe(babel({
             presets: ['babel-preset-es2015']
         }))
         .pipe(uglify())
         .pipe(rename({ extname: '.min.js' }))
-        .pipe(gulp.dest('dist/js/'))
+        .pipe(gulp.dest('dist'))
 });
 
 gulp.task('serve', ['less', 'js', 'jade'], function () {
