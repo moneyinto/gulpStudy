@@ -32,7 +32,7 @@ npm install gulp -g
     //gulp都是task任务，我们建一个任务为jade用来转换jade的代码
     gulp.task('jade', function(){
         //用return gulp.src()来创建一个虚拟文件对象流，然后匹配不同的文件,设置base灵活改变生成文件路径
-        return gulp.src(['src/*.jade', 'src/view/*.jade', 'src/view/**/*.jade']，{
+        return gulp.src(['src/*.jade', 'src/view/*.jade', 'src/view/**/*.jade'], {
         	base: 'src'
         })
         	//转换jade的代码
@@ -60,7 +60,7 @@ npm install gulp -g
 	});
 
     //gulp有一个default的任务
-    gulp.task('default', ['jade'， 'js', 'less'], function () {
+    gulp.task('default', ['jade', 'js', 'less'], function () {
 
 	});
 ```
